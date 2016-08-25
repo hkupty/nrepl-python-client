@@ -74,7 +74,7 @@ def _read_list(s):
     data = []
     while True:
         datum = _read_datum(s)
-        if not datum:
+        if datum is None:
             break
         data.append(datum)
     return data
