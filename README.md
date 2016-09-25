@@ -1,4 +1,4 @@
-# nrepl-python-client [![Travis CI status](https://secure.travis-ci.org/cemerick/nrepl-python-client.png)](http://travis-ci.org/#!/cemerick/nrepl-python-client/builds)
+# nrepl-python-client
 
 Surprisingly, an [nREPL](http://github.com/clojure/tools.nrepl) client
 written in Python.
