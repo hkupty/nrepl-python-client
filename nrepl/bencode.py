@@ -10,6 +10,7 @@
     :license: MIT, see LICENSE for more details.
 '''
 
+import asyncio
 
 try:
     from cStringIO import StringIO
@@ -156,6 +157,9 @@ class BencodeIO(object):
     def __iter__(self):
         return self
 
+    async def __aiter__(self):
+        return self
+
     def next(self):
         v = self.read()
         if not v:
@@ -164,6 +168,13 @@ class BencodeIO(object):
 
     def __next__(self):
         # In Python3, __next__ it is an own special class.
+        v = self.read()
+        if not v:
+            raise StopIteration
+        return v
+
+    async def __anext__(self):
+        await asyncio.sleep(0)
         v = self.read()
         if not v:
             raise StopIteration
