@@ -14,7 +14,7 @@
 import socket
 import nrepl.bencode as bencode
 
-from nrepl.asyncio import WatchableConnection
+from nrepl.event import WatchableConnection
 
 try:
     from urlparse import urlparse, ParseResult
