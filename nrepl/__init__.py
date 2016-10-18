@@ -14,6 +14,8 @@
 import socket
 import nrepl.bencode as bencode
 
+from nrepl.asyncio import WatchableConnection
+
 try:
     from urlparse import urlparse, ParseResult
 except ImportError:
@@ -24,7 +26,7 @@ __version__ = '.'.join(__version_info__)
 __author__ = 'Chas Emerick'
 __license__ = 'MIT'
 __copyright__ = '(c) 2013 by Chas Emerick'
-__all__ = ['connect']
+__all__ = ['connect', 'WatchableConnection']
 
 
 def _bencode_connect(uri):
